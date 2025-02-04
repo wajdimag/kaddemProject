@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from GitHub
-                git credentialsId: '1cf28393-a127-4fc1-b458-bf1980e2c2e6', url: 'https://github.com/anis-saadouli/kaddemProject.git'
+                // Checkout the code from GitHub without credentials (since the repo is public)
+                git url: 'https://github.com/wajdimag/kaddemProject.git', branch: 'patch2'
             }
         }
 
