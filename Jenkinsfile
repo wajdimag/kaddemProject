@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub without credentials (since the repo is public)
-                git url: 'https://github.com/wajdimag/kaddemProject.git', branch: 'patch2'
+                git url: 'https://github.com/wajdimag/kaddemProject.git', branch: 'patch-2'
             }
         }
 
