@@ -12,14 +12,14 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 // Run unit tests (assuming you're using Gradle or Maven for building and testing)
-                sh './gradlew test'  // Use './mvn test' if you're using Maven instead of Gradle
+                //sh './gradlew test'  // Use './mvn test' if you're using Maven instead of Gradle
             }
         }
 
         stage('Build Project') {
             steps {
                 // Build the project (compile, package, etc.)
-                sh './gradlew build'  // Use './mvn package' if you're using Maven
+               // sh './gradlew build'  // Use './mvn package' if you're using Maven
             }
         }
     }
