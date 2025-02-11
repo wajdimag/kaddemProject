@@ -1,9 +1,18 @@
-node {
-  stage('Checkout Code') {
-    checkout scm  // Pull code from the repository
-  }
-
-  stage('Build with Maven') {
-    sh 'mvn clean install'  // Maven build command
-  }
+pipeline {
+    agent any
+    tools {
+        maven 'maven3'  // Make sure this matches the name in Global Tool Configuration
+    }
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Build with Maven') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
 }
