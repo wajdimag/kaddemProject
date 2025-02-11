@@ -1,10 +1,9 @@
 node {
-  stage('Test Git Connection') {
-    // Run the command to check Git version and verify Git installation
-    sh 'git --version'
-
-    // Run a Git command to test repository access
-    sh 'git ls-remote https://github.com/wajdimag/kaddemProject.git' 
+  stage('Checkout Code') {
+    checkout scm  // Pull code from the repository
   }
-    
-} 
+
+  stage('Build with Maven') {
+    sh 'mvn clean install'  // Maven build command
+  }
+}
